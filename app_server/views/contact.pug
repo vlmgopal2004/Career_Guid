@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    .row.page-header
+      .col-lg-12.text-center
+        h1(style="color: white;") Contact Us
+        p For more information and further training, fill out this form. We will reach you.
+
+    .row.contact-form
+      .col-lg-6.offset-lg-3
+        form(action="/contact", method="POST")
+          .mb-3
+            label(for="name") Name
+            input#name.form-control(type="text", name="name", required)
+
+          .mb-3
+            label(for="technology") Interested Technology
+            select#technology.form-select(name="technology")
+              option(value="artificial-intelligence") Artificial Intelligence
+              option(value="information-technology") Information Technology
+              option(value="data-science") Data Science
+              option(value="cyber-security") Cyber Security
+
+          .mb-3
+            label(for="contactNo") Contact No
+            input#contactNo.form-control(type="tel", name="contactNo", required) 
+
+          .mb-3
+            label(for="email") Email ID
+            input#email.form-control(type="email", name="email", required)
+
+          button.btn.btn-primary(type="submit") Submit

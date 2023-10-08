@@ -1,0 +1,147 @@
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1 Welcome to Career Builder
+        small &nbsp; Your Path to Success
+
+    <br><br><br>
+
+  
+  .row
+    .col-sm-6.text-center 
+      form#search-form
+        .input-group 
+          input(type='text', id='search-input', placeholder='Search topics...', class='form-control rounded-pill')
+          .input-group-append
+            button(type='button', id='search-button', class='btn btn-primary rounded-pill') Search
+    
+  <br><br><br>
+
+  
+  .row
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Trending Topic #1
+          .card-body
+            h5.card-title
+              a(href='/feature') Artificial Intelligence
+              span.badge.pull-right.badge-default 
+            img(src='https://futureoflife.org/wp-content/uploads/2018/12/neural-pathways.jpg', alt='Artificial Intelligence Image', class='card-img-top', style="max-width: 100%; height: auto;")
+            p Explore the World of Artificial Intelligence and Its Job Possibilities
+
+    
+
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #2
+          .card-body
+            h5.card-title
+              a(href='/feature/3') Cybersecurity
+              span.badge.pull-right.badge-default 
+            img(src='https://etimg.etb2bimg.com/thumb/msid-93867928,imgsize-34558,width-1200,height=765,overlay-etciosea/news/security/cybersecurity-market-worth-usd-266-billion-by-2027-report.jpg', alt='Data Science Image', class='card-img-top', style="max-width: 100%; height: 100;")
+            p Explore the World of Cybersecurity and Its Importance
+
+
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #3
+          .card-body
+            h5.card-title
+              a(href='/feature/1') Information Technology
+              span.badge.pull-right.badge-default 
+            img(src='https://cache.careers360.mobi/media/article_images/2022/9/21/Different_Types_of_Jobs_in_Information_Technology.webp', alt='Information Technology Image', class='card-img-top', style="max-width: 100%; height: 100;")
+
+            p Dive into the World of Information Technology
+
+
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #4
+          .card-body
+            h5.card-title
+              a(href='/feature/2') Data Science
+              span.badge.pull-right.badge-default 
+            img(src='https://imageio.forbes.com/specials-images/imageserve/615a844b0e678d9d11c5fc26/0x0.jpg?format=jpg&width=1200', alt='Data Science Image', class='card-img-top', style="max-width: 100%; height: auto;")
+            p Explore the Fascinating World of Data Science and Analytics
+    
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #5
+          .card-body
+            h5.card-title
+              a(href='/feature/4') Kitchen manager
+              span.badge.pull-right.badge-default 
+            img(src="https://png.pngtree.com/element_our/png/20180918/chef-cooking-fried-chicken-and-delicious-sign-png_103460.jpg", alt="Chef Illustration", style="max-width: 100%; height: auto;")
+            p Explore the Exciting Career of a Chef
+
+        
+
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #6
+          .card-body
+            h5.card-title
+              a(href='/feature/5') Mechanical Engineering
+              span.badge.pull-right.badge-default 
+            img(src='https://armiet.in/wp-content/uploads/2020/03/B1P1.jpeg', alt='Data Science Image', class='card-img-top', style="max-width: 100%; height: 100;")
+            p Explore the World of Mechanical Engineering
+
+
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #7
+          .card-body
+            h5.card-title
+              a(href='/feature/6') Civil Engineering
+              span.badge.pull-right.badge-default 
+            img(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHt3U7LmZtFXmyQoLhYOmZ1FkyMKHXy9cVw&usqp=CAU', alt='', class='card-img-top', style="max-width: 100%; height: 100;")
+            p Discover the World of Civil Engineering
+    
+
+    .col-sm-6
+      .bs-component
+        .card.mb-3
+          h6.card-header Topic #8
+          .card-body
+            h5.card-title
+              a(href='/feature/7') Entrepreneurship
+              span.badge.pull-right.badge-default 
+            img(src='https://www.fsm.ac.in/blog/wp-content/uploads/2022/06/Entrepreneur.jpg', alt='', class='card-img-top', style="max-width: auto; height: auto;")
+            p Discover the World of Entrepreneurship
+    
+    
+
+    .col-sm-6
+      p.lead
+        | Discover Exciting Opportunities and Chart Your Path to Success!
+
+
+  script.
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('search-input');
+      const searchButton = document.getElementById('search-button');
+      
+      searchButton.addEventListener('click', function () {
+        const searchTerm = searchInput.value.toLowerCase();
+        const topicCards = document.querySelectorAll('.bs-component');
+
+        topicCards.forEach(function (card) {
+          const cardTitle = card.querySelector('h5.card-title a').textContent.toLowerCase();
+          if (cardTitle.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });

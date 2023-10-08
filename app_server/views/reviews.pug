@@ -1,0 +1,18 @@
+// In views/reviews.pug
+extends layout
+
+block content
+  .container
+    .row.page-header
+      .col-lg-12.text-center
+        h1(style="color: white;") Reviews
+        p Here are some of the reviews from our customers.
+
+    .row
+      .col-lg-12
+        ul
+          each review in reviews
+            li
+              h4= review.name
+              p= `Rating: ${review.rating}`
+              p= review.review
