@@ -17,22 +17,20 @@ html(ng-app='CareerBuilderapp')
         #navbarColor01.collapse.navbar-collapse
           ul.navbar-nav.me-auto
             li.nav-item
-              a.nav-link(href='/about', style='color: blue;') About
+              a.nav-link(href='/about', style='color: blue; d-none d-lg-inline') About
             li.nav-item
-              a.nav-link(href='/review', style='color: blue;') Review
+              a.nav-link(href='/review', style='color: blue; d-none d-lg-inline') Review
             li.nav-item
-              a.nav-link(href='/contact', style='color: blue;') Contact 
+              a.nav-link(href='/contact', style='color: blue; d-none d-lg-inline') Contact 
 
     .container
 
     block content
 
-
-
     footer
-        .row
-          .col-xs-12
-            small &copy; Manikanta
+      .row
+        .col-xs-12
+          small &copy; Manikanta
 
     script(src='/javascripts/jquery-1.11.1.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
